@@ -3,7 +3,7 @@
 #include <stdexcept>  // invalid_argument
 
 // 1. реализуйте конструктор ...
-Author::Author(const std::string &full_name, int age, Sex sex) {
+Author::Author(const std::string &full_name, int age, Sex sex) : full_name_{full_name}, age_{age}, sex_{sex} {
   // валидация аргументов (здесь был Рамиль)
   if (age < kMinAuthorAge) {
     throw std::invalid_argument("Author::age must be greater than " + std::to_string(kMinAuthorAge));
